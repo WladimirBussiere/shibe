@@ -3,9 +3,10 @@ const utils = require('../utils');
 
 
 
-module.exports = {
+// module.exports = {
 
-  getAnimals : async (req, res) => {
+  // getAnimals : async (req, res) => {
+  async function getAnimals(req, res){
 
     const animalUrl = req.params.animal;
     const count = req.query.count;
@@ -54,7 +55,7 @@ module.exports = {
       console.log('error: ', e);
     }
   }
-}
+// };
 
 
 
@@ -76,7 +77,7 @@ async function animalCall(url, animal, count, allAnimals, urls){
   } else {
     return data;
   }
-}
+};
 
 
 
@@ -87,3 +88,6 @@ function renameKey(obj, newKey, oldKey){
 
   return (obj)
 }
+
+
+module.exports = {getAnimals, animalCall, renameKey}
