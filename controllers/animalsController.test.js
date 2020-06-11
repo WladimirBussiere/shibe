@@ -16,6 +16,7 @@ describe("renameKey function", () => {
     const output = renameKey(input, newName, oldName);
 
     //then
-      expect(output).toHaveProperty('key3b', 'third value');
+    expect(output).not.toHaveProperty('key3', 'third value');
+    expect(output).toHaveProperty('key3b', 'third value');
   });
 });
